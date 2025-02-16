@@ -16,6 +16,8 @@ server:
   port: 8080
 
 arc:
+  cors:
+    enabled: true
   scripts:
     enabled: true
     folder: agents
