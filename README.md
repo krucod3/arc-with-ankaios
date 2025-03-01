@@ -96,6 +96,22 @@ New agents can be added to the `agents` folder located at the root of the projec
 The folder contains a default agent `assistant-agent` that can be used as a template.
 
 
+#### 5. Tracing
+
+The Arc Framework supports tracing with Micrometer Tracing. 
+See [Arc Tracing](https://eclipse.dev/lmos/docs/arc/tracing/) for more information.
+
+The project is already configured to use Micrometer Tracing with Zipkin.
+
+Start a zipkin server using docker (https://zipkin.io/pages/quickstart):
+```shell
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
+
+Open the Zipkin UI in your browser: http://localhost:9411/
+and watch the traces of your Arc Agents flow in.
+
+
 ## Code of Conduct
 
 This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.1 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.

@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
 # SPDX-License-Identifier: Apache-2.0
 spring:
+  application:
+    name: Arc Agent
   jackson:
     default-property-inclusion: NON_NULL
   main:
@@ -39,6 +41,9 @@ logging:
     ArcDSL: DEBUG
 
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   server:
     port: 9090
   endpoints:

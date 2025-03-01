@@ -40,6 +40,12 @@ dependencies {
     implementation("org.eclipse.lmos:arc-api:$arcVersion")
     implementation("org.eclipse.lmos:arc-graphql-spring-boot-starter:$arcVersion")
 
+    // Tracing
+    implementation("io.micrometer:micrometer-tracing-bridge-otel")
+    implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
+    implementation("com.google.protobuf:protobuf-java:3.23.4")
+    implementation("io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha")
+
     // Azure
     implementation("com.azure:azure-identity:1.13.1")
 
