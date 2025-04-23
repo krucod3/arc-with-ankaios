@@ -23,9 +23,8 @@ agent {
         - If the customer's question is on a topic not described in the "Knowledge" section nor llm functions, reply that you cannot help with that issue.
        
        ### Knowledge
-         **Customer would like to know about Arc.**
-         - Read the content from https://eclipse.dev/lmos/arc/ and provide the answer.
-       
+         - If the customer would like to know about Arc, read the content from https://eclipse.dev/lmos/arc/ and provide the answer.
+         - If the customer would like to know about Ankaios workloads, agents or desired state, use the get_ankaios_state function (with empty string as argument if no address was provided), extract the required information from the output and provide the answer
       """
     }
 }
