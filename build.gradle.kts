@@ -26,24 +26,23 @@ kotlin {
 }
 
 dependencies {
-    val arcVersion = "0.123.0"
+    val arcVersion = "0.124.0"
     val langchain4jVersion = "0.36.2"
 
     // Arc
     implementation("org.eclipse.lmos:arc-azure-client:$arcVersion")
     implementation("org.eclipse.lmos:arc-spring-boot-starter:$arcVersion")
-    implementation("org.eclipse.lmos:arc-reader-pdf:$arcVersion")
-    implementation("org.eclipse.lmos:arc-reader-html:$arcVersion")
     implementation("org.eclipse.lmos:arc-assistants:$arcVersion")
-    implementation("org.eclipse.lmos:arc-reader-html:$arcVersion")
+    implementation("org.eclipse.lmos:arc-readers:$arcVersion")
     implementation("org.eclipse.lmos:arc-api:$arcVersion")
     implementation("org.eclipse.lmos:arc-graphql-spring-boot-starter:$arcVersion")
+    implementation("org.eclipse.lmos:arc-view-spring-boot-starter:$arcVersion")
 
     // Tracing
+    implementation(platform("io.micrometer:micrometer-tracing-bom:1.4.5"))
+    implementation("io.micrometer:micrometer-tracing")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
     implementation("io.micrometer:micrometer-tracing-bridge-otel")
-    implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
-    implementation("com.google.protobuf:protobuf-java:4.30.0")
-    implementation("io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha")
 
     // Azure
     implementation("com.azure:azure-identity:1.15.4")

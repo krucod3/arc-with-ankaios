@@ -41,6 +41,9 @@ logging:
     ArcDSL: DEBUG
 
 management:
+  otlp:
+    tracing:
+      endpoint: http://localhost:6006/v1/traces
   tracing:
     enabled: false
     sampling:

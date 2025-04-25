@@ -50,9 +50,9 @@ This requires the port 8080 to be available.
 
 #### 3. Access the Agent
 
-You can chat with the Arc Agents using the [Arc View](https://github.com/eclipse-lmos/arc-view).
+You can chat with the Arc Agents using the [Arc View](http://github.com/eclipse-lmos/arc-view).
 
-Simply open https://eclipse.dev/lmos/chat/index.html?agentUrl=http://localhost:8080#/chat in your browser.
+Simply open http://localhost:8080/chat/index.html#/chat in your browser.
 
 Alternatively, the Graphiql interface is also available, under http://localhost:8080/graphiql?path=/graphql.
 
@@ -109,12 +109,12 @@ management:
     enabled: true
 ```
 
-To use tracing with [Zipkin](https://zipkin.io/pages/quickstart), start a Zipkin server using Docker:
+To use tracing with [Arize Phoenix](https://phoenix.arize.com/), start the Phoenix server using Docker:
 ```shell
-docker run -d -p 9411:9411 openzipkin/zipkin
+docker run -p 6006:6006 -p 4317:4317 -i -t arizephoenix/phoenix:latest
 ```
 
-Open the Zipkin UI in your browser at [http://localhost:9411](http://localhost:9411/) to watch the traces of your Arc Agents in real time.
+Open the Phoenix UI in your browser at [http://localhost:6006/projects](http://localhost:9411/) to watch the traces of your Arc Agents in real time.
 
 ## Code of Conduct
 
