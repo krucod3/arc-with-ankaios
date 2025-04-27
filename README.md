@@ -116,6 +116,34 @@ docker run -p 6006:6006 -p 4317:4317 -i -t arizephoenix/phoenix:latest
 
 Open the Phoenix UI in your browser at [http://localhost:6006/projects](http://localhost:9411/) to watch the traces of your Arc Agents in real time.
 
+
+## In Production
+
+When deploying the application in production, you may not want to use kotlin scripts.
+
+For this purpose, we have the Arc Gradle Plugin that will transpile the kotlin scripts into kotlin classes.
+
+Simply add the following to your `build.gradle.kts` file:
+
+```kts
+plugins {
+  id("org.eclipse.lmos.arc.gradle.plugin") version "0.124.0"
+}
+```
+
+The transpiled classes will be generated in the `/build/arc/kotlin` folder.
+
+For these classes to be loaded, you will also need to disable the kotlin scripts in your `application.yml` file:
+
+```yml
+arc:
+  scripts:
+    enabled: false
+```
+
+This will also prevent any kotlin scripts from being loaded.
+
+
 ## Code of Conduct
 
 This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.1 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.
