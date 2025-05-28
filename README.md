@@ -65,7 +65,7 @@ Ask the agent in the chat a question about Ankaios, like:
 Think of your own questions and explore what is possible
 
 > [!NOTE]
-> In the unusual case that something unexpected happens and you need to clean up the Ankaios cluster just run the `clean-up-ankaios.sh` script from the root folder.
+> If you want to start over and need to clean up the Ankaios cluster just run the `clean-up-ankaios.sh` script from the root folder.
 > Also be aware that the agent keeps track of the conversations and includes the knowledge in its answers. If you cleanup the cluster, you should start a new conversation or refresh the page to avoid discrepancies between the state of the cluster and the one of the agent.
 
 #### 4.1 Add new Agents (assistants)
