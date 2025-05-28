@@ -1,14 +1,16 @@
 <!--
-SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
+SPDX-FileCopyrightText: 2023 Deutsche Telekom AG, Elektrobit and others
 
 SPDX-License-Identifier: CC0-1.0    
 -->
-# Welcome to the Arc Agent Init Project
+# Welcome to the Ankaios demo with ARC agents
 
-The following project is a demo project for the Arc Agent Framework. 
-It can also be used to kickstart a new Spring Boot project that uses the Arc Agent Framework.
+This project showcases how AI agents can help demonstrate the capabilities of Ankaios.
+The repo is a fork from LMOS ARC and includes a custom devcontainer 
 
 ## How to run
+
+#### 0. Open the repo in the provided devcontainer, e.g., with VS Code
 
 #### 1. Add language model configuration
 
@@ -47,51 +49,26 @@ This requires the port 8080 to be available.
   ./gradlew bootRun
 ```
 
-
 #### 3. Access the Agent
 
 You can chat with the Arc Agents using the [Arc View](http://github.com/eclipse-lmos/arc-view).
 
 Simply open http://localhost:8080/chat/index.html#/chat in your browser.
 
-Alternatively, the Graphiql interface is also available, under http://localhost:8080/graphiql?path=/graphql.
 
-Example Request:
+#### 4. Get to know Ankaios
 
-```graphql
-subscription {
-    agent(
-        agentName: "assistant-agent"
-        request: {
-            conversationContext: {
-                conversationId: "1"
-            }
-            systemContext: [],
-            userContext: {
-                userId: "1234",
-                profile: [{
-                    key: "name",
-                    value: "Pat"
-                }]
-            },
-            messages: [
-                {
-                    role: "user",
-                    content: "Hi",
-                    format: "text",
-                }
-            ]
-        }
-    ) {
-        messages {
-            content
-        }
-    }
-}
-```
+Ask the agent in the chat a question about Ankaios, like:
 
+> What is Ankaios?
 
-#### 4. Add new Agents
+Think of your own questions and explore what is possible
+
+> [!NOTE]
+> In the unusual case that something unexpected happens and you need to clean up the Ankaios cluster just run the `clean-up-ankaios.sh` script from the root folder.
+> Also be aware that the agent keeps track of the conversations and includes the knowledge in its answers. If you cleanup the cluster, you should start a new conversation or refresh the page to avoid discrepancies between the state of the cluster and the one of the agent.
+
+#### 4.1 Add new Agents (assistants)
 
 New agents can be added to the `agents` folder located at the root of the project.
 The folder contains a default agent `assistant-agent` that can be used as a template.
@@ -142,7 +119,6 @@ arc:
 ```
 
 This will also prevent any kotlin scripts from being loaded.
-
 
 ## Code of Conduct
 
