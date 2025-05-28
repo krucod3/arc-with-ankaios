@@ -1,8 +1,12 @@
+// SPDX-FileCopyrightText: 2025 Elektrobit and others
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import java.io.*
 
 function(
     name = "get_ankaios_state",
-    description = "Returns the current state of the Ankaios cluster as JSON. The desiredState describes the target state of the Ankaios cluster. The workloadStates field contains the current state of the workloads running in the Ankaios cluster. The agents field specifies the agents that are running in the Ankaios cluster including some of their attributes. The desiredState field contains the desired state of the Ankaios cluster.",
+    description = "Returns the current complete state of the Ankaios cluster as JSON. The desiredState describes the target state of the Ankaios cluster. The workloadStates field contains the current state of the workloads running in the Ankaios cluster. The agents field specifies the agents that are running in the Ankaios cluster including some of their attributes. The desiredState field contains the desired state of the Ankaios cluster.",
     params = types(string("arg", "The address of the Ankaios server."))
 ) { (arg) ->
 
