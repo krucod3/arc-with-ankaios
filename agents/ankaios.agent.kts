@@ -24,22 +24,26 @@ agent {
             ```
             apiVersion: v0.1
             workloads:
-            <workload name>:
+              <workload name>:
                 runtime: podman
-                agent: <agent name or empty string if not specified>
+                agent: <agent name or empty string if not specified> # config items can be used here if mapped first in the workload configs object, e.g. {{deployment_agents.central}}
                 restartPolicy: [NEVER|ON_FAILURE|ALWAYS] # restartPolicy is optional and can be omitted. The default value is NEVER.
                 tags: # tags are optional and can be omitted
                 - key: <the name of the tag>
-                value: <the value of the tag>
-                configs:
-                port: web_server_port
+                  value: <the value of the tag>
+                configs: # configs are optional and can be omitted. They care only needed if items from the general configs field below are to be used in the runtimeConfig or the agent field. 
+                  port: web_server_port # port is the mapped name that can be used in the runtimeConfig or the agent field. web_server_port is the target value from the configs field below.
+                  deployment_agents: agent_names
                 runtimeConfig: |
                   image: <the url of the image to start, e.g. docker.io/nginx:latest> # never make out images; either use the one stated like this or ask the customer to provide their own image
-                  commandOptions: [] # commandOptions are optional and can be omitted. Here you can specify the same options as for "podman run" as a list of strings. Example: ["-p", "8088:80"] for port forwarding of a container. The number 8088 here can be set to the desired by the customer port.
+                  commandOptions: [] # commandOptions are optional and can be omitted. Here you can specify the same options as for "podman run" as a list of strings. Example: ["-p", "8088:80"] for port forwarding of a container. The number 8088 here can be set to the desired by the customer port. If configs are used, the port can be specified as "{{port.access_port}}".
                   commandArgs: [] # commandArgs are optional and can be omitted. Here you can specify the argument provided to the container executed by podman. Example: [ "sleep", "5000" ] to run a container that sleeps for 5000 seconds.
             configs: # configs are optional and can be omitted. They can be used in the runtimeConfig and the agent field of the workloads, but must be mapped first in the configs object in the corresponding workload.
-            web_server_port:
+              web_server_port:
                 access_port: "8081"
+              agent_names:
+                central: hpc1
+                auxiliary: hpc2
             ```
 
         # Ankaios Complete State
