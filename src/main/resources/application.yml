@@ -18,6 +18,11 @@ server:
   port: 8080
 
 arc:
+  tools:
+    query:
+      enabled: true
+    mutation:
+      enabled: true
   cors:
     enabled: true
   scripts:
