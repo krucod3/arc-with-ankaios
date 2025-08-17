@@ -25,8 +25,12 @@ kotlin {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 dependencies {
-    val arcVersion = "0.132.0"
+    val arcVersion = "0.148.0"
     val langchain4jVersion = "0.36.2"
 
     // Arc
