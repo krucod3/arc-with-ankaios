@@ -30,7 +30,7 @@ tasks.withType<Test> {
 }
 
 dependencies {
-    val arcVersion = "0.148.0"
+    val arcVersion = "0.154.0"
     val langchain4jVersion = "0.36.2"
 
     // Arc
