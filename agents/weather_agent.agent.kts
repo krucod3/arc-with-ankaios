@@ -1,7 +1,3 @@
-import kotlinx.coroutines.delay
-import org.eclipse.lmos.arc.agents.conversation.AssistantMessage
-import org.eclipse.lmos.arc.agents.conversation.toConversation
-
 // SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
 //
 // SPDX-License-Identifier: Apache-2.0
@@ -19,6 +15,7 @@ agent {
      """
     }
     tools {
+        // +"get_weather_alert"
         +"get_weather"
     }
 }

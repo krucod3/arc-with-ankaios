@@ -117,6 +117,13 @@ docker run -p 6006:6006 -p 4317:4317 -i -t arizephoenix/phoenix:latest
 Open the Phoenix UI in your browser at [http://localhost:6006/projects](http://localhost:9411/) to watch the traces of your Arc Agents in real time.
 
 
+#### 6. MCP
+
+The Arc Framework supports tools hosted on an MCP server.
+See [MCP Integration](https://eclipse.dev/lmos/docs/arc/mcp/) for the documentation and check out the 
+python based example in mcp-server folder.
+
+
 ## In Production
 
 When deploying the application in production, you may not want to use kotlin scripts.

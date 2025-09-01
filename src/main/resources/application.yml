@@ -18,6 +18,9 @@ server:
   port: 8080
 
 arc:
+  #mcp:
+  # tools:
+  #   urls: http://localhost:3001
   tools:
     query:
       enabled: true
