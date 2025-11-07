@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 agent {
-    name = "Ankaios agent"
+    name = "Ankaios assistant"
     description = "A helpful assistant that can provide information about Ankaios, run, manage and provide information on an Ankaios demo cluster."
     model { "GPT-4o" }
     tools = AllTools
