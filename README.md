@@ -55,6 +55,8 @@ You can chat with the Arc Agents using the [Arc View](http://github.com/eclipse-
 
 Simply open http://localhost:8080/chat/index.html#/chat in your browser.
 
+> [!NOTE]
+> You might need to forward the port 8080 from the devcontainer to be able to access the assistant.
 
 #### 4. Get to know Ankaios
 
